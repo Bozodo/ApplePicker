@@ -18,6 +18,7 @@ public class AppleTree : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         Vector3 pos = transform.position;
@@ -32,11 +33,14 @@ public class AppleTree : MonoBehaviour
         {
             speed = -Mathf.Abs(speed); //	Move	left
         }
-        else if(Random.value < chanceToChangeDirections)
+        
+    }
+
+    void FixedUpdate()
+    {
+        if (Random.value < chanceToChangeDirections)
         {
             speed *= -1;
         }
-
-
-        }
+    }
 }
