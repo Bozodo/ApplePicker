@@ -19,6 +19,7 @@ public class Basket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Gets the mouse position
         Vector3 mousePos2D = Input.mousePosition;
         mousePos2D.z = Camera.main.transform.position.z;
         Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
