@@ -7,11 +7,13 @@ public class Basket : MonoBehaviour
 {
 
     public Text scoreGT;
-    public Text HighScore;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        scoreGT = scoreGO.GetComponent<Text>();
+        scoreGT.text = "0";
     }
 
     // Update is called once per frame
@@ -32,10 +34,17 @@ public class Basket : MonoBehaviour
         {
             Destroy(collidedWith);
 
+            //Track score
             int score = int.Parse(scoreGT.text);
             score += 100;
+
+            //Convert the score back to a string and display it
             scoreGT.text = score.ToString();
 
+            if (score > HighScore.score)
+            {
+                HighScore.score = score;
+            }
         }
     }
 }

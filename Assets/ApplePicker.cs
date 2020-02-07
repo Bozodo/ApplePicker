@@ -44,6 +44,7 @@ public class ApplePicker : MonoBehaviour
         }
 
         int basketIndex = basketList.Count - 1;
+        //tBasketGo > TemporaryBasketGameObject
         GameObject tBasketGo = basketList[basketIndex];
         basketList.RemoveAt(basketIndex);
         Destroy(tBasketGo);
