@@ -17,7 +17,15 @@ public class Apple : MonoBehaviour
     {
         if(transform.position.y < bottomY)
         {
+            //Destroy is scheduled at the end of update
+            //You can still write code past the Destroy because of this
             Destroy(this.gameObject);
+
+            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
+
+            apScript.AppleDestroyed();
         }
     }
+
+    
 }
