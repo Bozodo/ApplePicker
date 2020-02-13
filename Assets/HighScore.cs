@@ -15,12 +15,12 @@ public class HighScore : MonoBehaviour
 
     void Awake()
     {
-        if (PlayerPrefs.HasKey("HighSCore"))
+        if (PlayerPrefs.HasKey("HighScore"))
         {
             score = PlayerPrefs.GetInt("HighScore");
         }
 
-        PlayerPrefs.SetInt("HighSCore", score);
+        PlayerPrefs.SetInt("HighScore", score);
     }
 
     // Update is called once per frame
